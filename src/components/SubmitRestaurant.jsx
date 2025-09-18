@@ -165,7 +165,14 @@ function SubmitRestaurant() {
     <FormContainer>
       <FormTitle>🍽️ 새로운 맛집 제보하기</FormTitle>
       
-      <form onSubmit={handleSubmit(onSubmit)}>
+  
+      <form
+        name="restaurant-submit"
+        method="POST"
+        data-netlify="true"
+        action="/"
+        onSubmit={handleSubmit(onSubmit)}
+      >
         <input type="hidden" name="form-name" value="restaurant-submit" />
         
         <FormGroup>
