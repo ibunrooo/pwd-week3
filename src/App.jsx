@@ -16,7 +16,7 @@ import SubmitPage from './pages/SubmitPage';
 // Components
 import Header from './components/Header';
 import NotFound from './components/NotFound';
-import PoplularRestaurants from './components/PoplularRestaurants';
+import PopularRestaurants from './components/PopularRestaurants';
 import RestaurantCard from './components/RestaurantCard';
 import RestaurantList from './components/RestaurantList';
 import SubmitRestaurant from './components/SubmitRestaurant';
