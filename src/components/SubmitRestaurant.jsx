@@ -126,14 +126,11 @@ function SubmitRestaurant() {
   const onSubmit = async (data) => {
     try {
       // Netlify Forms로 제출
-      const response = await fetch("/", {
-        method: "POST",
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: new URLSearchParams({
-          "form-name": "restaurant-submit",
-          ...data
-        }).toString()
-      });
+      const fd = new FormData();
+      fd.append("form-name", "restaurant-submit");
+      Object.entries(data).forEach(([k, v]) => fd.append(k, v));
+      const response = await fetch("/", { method: "POST", body: fd });
+      
       
       if (response.ok) {
         setSubmitted(true);
