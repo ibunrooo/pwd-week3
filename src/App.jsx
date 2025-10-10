@@ -33,9 +33,9 @@ function App() {
             <Route path="/list" element={<ListPage />} />
             <Route path="/restaurant/:id" element={<DetailPage />} />
             <Route path="/popular" element={<PopularPage />} />
-            <Route path="/admin" element={<AdminPage />} />
-            <Route path="/submissions" element={<SubmissionsPage />} />
             <Route path="/submit" element={<SubmitPage />} />
+            <Route path="/admin" element={<AdminPage />} />
+            <Route path="/admin/submissions" element={<SubmissionsPage />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </main>
