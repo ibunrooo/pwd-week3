@@ -20,7 +20,7 @@ const api = axios.create({
   timeout: 10000,
 });
 
-// ✅ 요청 / 응답 로그용 인터셉터
+// 요청 / 응답 로그용 인터셉터
 api.interceptors.request.use(
   (config) => {
     console.log("📡 Request:", config.method?.toUpperCase(), config.url);
@@ -70,22 +70,22 @@ export const restaurantAPI = {
   },
 };
 
-// ✅ 제보 관련 API
+// 제보 관련 API
 export const submissionAPI = {
   createSubmission: async (payload) => {
-    const response = await api.post("/api/submissions", payload);
+    const response = await api.post("/submissions", payload);
     return response.data;
   },
   listSubmissions: async (status) => {
-    const response = await api.get("/api/submissions", { params: { status } });
+    const response = await api.get("/submissions", { params: { status } });
     return response.data;
   },
   updateSubmission: async (id, payload) => {
-    const response = await api.put(`/api/submissions/${id}`, payload);
+    const response = await api.put(`/submissions/${id}`, payload);
     return response.data;
   },
   deleteSubmission: async (id) => {
-    const response = await api.delete(`/api/submissions/${id}`);
+    const response = await api.delete(`/submissions/${id}`);
     return response.status;
   },
 };
